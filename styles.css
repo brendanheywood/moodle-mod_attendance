@@ -153,6 +153,7 @@
 .path-mod-attendance .cell {
     position: relative;
 }
+.takelist input[type="radio"],
 .path-mod-attendance [class^="attendancestatus"] {
     position: absolute;
     left: 0;
@@ -161,7 +162,26 @@
     bottom: 0;
     line-height: 20px;
     padding: 8px;
+    margin: 0;
+    z-index: 1;
 }
+.takelist input[type="radio"] {
+    z-index: 2;
+    top: 50%;
+    margin-top: -7px;
+    left: 50%;
+    margin-left: -7px;
+    width: 14px;
+    height: 14px;
+}
+
+.takelist input[type="radio"] ~ label {
+    opacity: .1;
+}
+.takelist input[type="radio"]:checked ~ label {
+    opacity: 1;
+}
+
 .path-mod-attendance .attendancestatus-P {
     background: #2DA22D;
     color: white;

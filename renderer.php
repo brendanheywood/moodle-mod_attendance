@@ -650,7 +650,8 @@ class mod_attendance_renderer extends plugin_renderer_base {
                         'type'  => 'radio',
                         'name'  => 'user'.$user->id,
                         'class' => 'st'.$st->id,
-                        'value' => $st->id);
+                        'value' => $st->id,
+                        'id' => 'user'.$user->id.'st'.$st->id);
                 if (array_key_exists($user->id, $takedata->sessionlog) and $st->id == $takedata->sessionlog[$user->id]->statusid) {
                     $params['checked'] = '';
                 }
@@ -660,6 +661,7 @@ class mod_attendance_renderer extends plugin_renderer_base {
                 if ($takedata->pageparams->viewmode == att_take_page_params::SORTED_GRID) {
                     $input = html_writer::tag('nobr', $input . $st->acronym);
                 }
+                $input = $input . html_writer::tag('label', '', array('for' => 'user'.$user->id.'st'.$st->id, 'class' => 'attendancestatus-'.$st->acronym));
 
                 $celldata['text'][] = $input;
             }
