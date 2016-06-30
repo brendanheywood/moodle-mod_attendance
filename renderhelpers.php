@@ -214,9 +214,18 @@ class user_sessions_cells_text_generator extends user_sessions_cells_generator {
     }
 }
 
+function strftimehm($time) {
+    $mins = userdate($time, '%M');
+    if ($mins == '00') {
+        return userdate($time, get_string('strftimeh', 'attendance'));
+    } else {
+        return userdate($time, get_string('strftimehm', 'attendance'));
+    }
+}
+
 function construct_session_time($datetime, $duration) {
-    $starttime = userdate($datetime, get_string('strftimehm', 'attendance'));
-    $endtime = userdate($datetime + $duration, get_string('strftimehm', 'attendance'));
+    $starttime = strftimehm($datetime);
+    $endtime = strftimehm($datetime + $duration);
 
     return $starttime . ($duration > 0 ? ' - ' . $endtime : '');
 }
