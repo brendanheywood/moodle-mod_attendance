@@ -922,7 +922,7 @@ class mod_attendance_renderer extends plugin_renderer_base {
             foreach ($reportdata->statuses as $status) {
                 $statsoutput .= "$status->description:&nbsp;".$sessionstats[$status->id]."<br/>";
             }
-            $statrow->cells[] = $statsoutput;
+            $statrow->cells[] = html_writer::tag('div', $statsoutput, array('class' => 'statuses'));
 
         }
         $table->data[] = $statrow;
