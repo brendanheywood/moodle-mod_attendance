@@ -925,6 +925,11 @@ class mod_attendance_renderer extends plugin_renderer_base {
             $statrow->cells[] = html_writer::tag('div', $statsoutput, array('class' => 'statuses'));
 
         }
+        foreach ($reportdata->statuses as $status) {
+            $statrow->cells[] = '';
+        }
+        $statrow->cells[] = '';
+        $statrow->cells[] = '';
         $table->data[] = $statrow;
 
         if ($bulkmessagecapability) { // Require that the user can bulk message users.
