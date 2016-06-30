@@ -150,18 +150,34 @@
     display: inline-block;
 }
 
+.path-mod-attendance .cell {
+    position: relative;
+}
+.path-mod-attendance [class^="attendancestatus"] {
+    position: absolute;
+    left: 0;
+    right: 1px;
+    top: 0;
+    bottom: 0;
+    line-height: 20px;
+    padding: 8px;
+}
 .path-mod-attendance .attendancestatus-P {
-    color: green;
+    background: #2DA22D;
+    color: white;
 }
 
 .path-mod-attendance .attendancestatus-E {
-    color: #00AEE3;
+    background: #00AEE3;
+    color: white;
 }
 
 .path-mod-attendance .attendancestatus-L {
-    color: #F7931E;
+    background: #F7931E;
+    color: white;
 }
 
 .path-mod-attendance .attendancestatus-A {
-    color: red;
+    background: #D82222;
+    color: white;
 }
